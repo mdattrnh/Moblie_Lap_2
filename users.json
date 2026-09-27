@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "User 1",
+      "email": "user1@gmail.com",
+      "decs": "I am user number 1",
+      "avatar_url": "https://i.pravatar.cc/300?img=1",
+      "hobby": "Music, Sport, Movie"
+    },
+    {
+      "id": 2,
+      "username": "User 2",
+      "email": "user2@gmail.com",
+      "decs": "I am user number 2",
+      "avatar_url": "https://i.pravatar.cc/300?img=2",
+      "hobby": "Reading, Gaming, Travel"
+    },
+    {
+      "id": 3,
+      "username": "User 3",
+      "email": "user3@gmail.com",
+      "decs": "I am user number 3",
+      "avatar_url": "https://i.pravatar.cc/300?img=3",
+      "hobby": "Football, Music, Coding"
+    },
+    {
+      "id": 4,
+      "username": "User 4",
+      "email": "user4@gmail.com",
+      "decs": "I am user number 4",
+      "avatar_url": "https://i.pravatar.cc/300?img=4",
+      "hobby": "Photography, Movie, Travel"
+    }
+  ]
+}
