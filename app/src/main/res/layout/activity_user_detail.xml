@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".UserDetailActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:paddingBottom="25dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="vertical"
+          android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/tv_detail_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User 1"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tv_detail_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email: user1@gmail.com"
+            android:textColor="#444444"
+            android:textSize="17sp" />
+
+      </LinearLayout>
+
+      <ImageView
+          android:id="@+id/iv_detail_avatar"
+          android:layout_width="140dp"
+          android:layout_height="140dp"
+          android:background="#E0E0E0"
+          android:scaleType="centerCrop"
+          android:contentDescription="User avatar" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingTop="25dp"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:id="@+id/tv_detail_decs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="I am user number 1"
+        android:textColor="#555555"
+        android:textSize="16sp"
+        android:paddingBottom="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hobby"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:id="@+id/tv_detail_hobby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Music, Sport, Movie"
+        android:textColor="#555555"
+        android:textSize="16sp" />
+
+  </LinearLayout>
+
+</ScrollView>

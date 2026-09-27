@@ -5,30 +5,65 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-  public GridView gridview;
 
-  private AdapterView.OnItemClickListener onitemclick = new AdapterView.OnItemClickListener() {
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-      Intent intent = new Intent(getBaseContext(), ViewArticleActivity.class);
-      intent.putExtra("id", gridview.getAdapter().getItemId(position));
-      startActivity(intent);
-    }
-  };
+  private GridView gridView;
+  private ProgressBar progressBar;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    getSupportActionBar().hide();
 
-    gridview = findViewById(R.id.gridview);
-    new ArticleData(getBaseContext(), gridview).loadData("https://raw.githubusercontent.com/thanhdnh/json/main/products.json", this);
-    gridview.setOnItemClickListener(onitemclick);
+    if (getSupportActionBar() != null) {
+      getSupportActionBar().hide();
+    }
+
+    // Ánh xạ View
+    gridView = findViewById(R.id.gridview);
+    progressBar = findViewById(R.id.progressBar);
+
+    // Link RAW của users.json
+    String url =
+            "https://raw.githubusercontent.com/mdattrnh/Moblie_Lap_2/main/users.json";
+
+    // Load dữ liệu User
+    UserData userData =
+            new UserData(
+                    this,
+                    gridView,
+                    progressBar
+            );
+
+    userData.loadData(url);
+
+    // Khi click vào một User
+    gridView.setOnItemClickListener(
+            new AdapterView.OnItemClickListener() {
+
+              @Override
+              public void onItemClick(
+                      AdapterView<?> parent,
+                      View view,
+                      int position,
+                      long id) {
+
+                Intent intent =
+                        new Intent(
+                                MainActivity.this,
+                                UserDetailActivity.class
+                        );
+
+                // Truyền id User sang màn Detail
+                intent.putExtra("id", id);
+
+                startActivity(intent);
+              }
+            }
+    );
   }
-
 }
