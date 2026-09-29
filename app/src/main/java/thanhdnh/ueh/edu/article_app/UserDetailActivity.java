@@ -1,6 +1,7 @@
 package thanhdnh.ueh.edu.article_app;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +18,8 @@ public class UserDetailActivity extends AppCompatActivity {
   private TextView tvDecs;
   private TextView tvHobby;
 
+  private Button btnBack;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -27,12 +30,17 @@ public class UserDetailActivity extends AppCompatActivity {
     }
 
     // Ánh xạ View
+    btnBack = findViewById(R.id.btn_back);
+
     ivAvatar = findViewById(R.id.iv_detail_avatar);
 
     tvUsername = findViewById(R.id.tv_detail_username);
     tvEmail = findViewById(R.id.tv_detail_email);
     tvDecs = findViewById(R.id.tv_detail_decs);
     tvHobby = findViewById(R.id.tv_detail_hobby);
+
+    // Nút Back
+    btnBack.setOnClickListener(v -> finish());
 
     // Nhận id từ MainActivity
     int id = (int) getIntent().getLongExtra("id", 0);
